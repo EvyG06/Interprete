@@ -1,0 +1,4 @@
+print("antes del error");
+let edad = 20;
+let texto = "edad: " + edad;
+print("esto no se imprime");

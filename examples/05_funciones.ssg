@@ -1,0 +1,45 @@
+// Parámetros y valor de retorno
+let area = function(base, altura) {
+    return base * altura / 2;
+};
+print("área del triángulo:", area(10, 4));
+
+// Recursión
+let fibonacci = function(n) {
+    if (n <= 1) {
+        return n;
+    }
+    return fibonacci(n - 1) + fibonacci(n - 2);
+};
+print("fibonacci(20):", fibonacci(20));
+
+let ackermann = function(m, n) {
+    if (m == 0) {
+        return n + 1;
+    }
+    if (n == 0) {
+        return ackermann(m - 1, 1);
+    }
+    return ackermann(m - 1, ackermann(m, n - 1));
+};
+print("ackermann(2, 2):", ackermann(2, 2));
+
+let hanoi = function(n, origen, destino, auxiliar) {
+    if (n == 0) {
+        return [];
+    }
+    return hanoi(n - 1, origen, auxiliar, destino)
+        + [[origen, destino]]
+        + hanoi(n - 1, auxiliar, destino, origen);
+};
+print("hanoi(3):", hanoi(3, "A", "C", "B"));
+
+// Funciones de orden superior: una función que recibe otra
+let aplicar = function(f, lista) {
+    let resultado = [];
+    for (let i = 0; i < len(lista); i = i + 1) {
+        push(resultado, f(lista[i]));
+    }
+    return resultado;
+};
+print("dobles:", aplicar(function(x) { x * 2 }, [1, 2, 3]));

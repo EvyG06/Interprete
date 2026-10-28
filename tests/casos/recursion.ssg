@@ -1,0 +1,11 @@
+let factorial = function(n) {
+    if (n <= 1) { return 1; }
+    return n * factorial(n - 1);
+};
+let fib = function(n) {
+    if (n <= 1) { return n; }
+    return fib(n - 1) + fib(n - 2);
+};
+print(factorial(10));
+print(fib(15));
+factorial(25);

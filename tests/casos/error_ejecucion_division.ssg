@@ -1,0 +1,5 @@
+let promedio = function(total, cantidad) {
+    return total / cantidad;
+};
+print(promedio(10, 2));
+print(promedio(10, 0));

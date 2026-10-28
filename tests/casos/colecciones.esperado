@@ -1,0 +1,3 @@
+[10, 2, 3, 4] 4 null
+{"x": 1, 2: "dos", true: [1], "y": 2} dos null
+true

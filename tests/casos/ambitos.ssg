@@ -1,0 +1,14 @@
+let x = 1;
+let sombra = function(x) { x = x * 100; return x; };
+let local = function() { let x = 50; return x; };
+let global = function() { x = x + 1; };
+print(sombra(3), local(), x);
+global();
+print(x);
+let f = function() { x };
+let g = function() { let x = 99; return f(); };
+print(g());
+let crear = function() { let n = 0; return function() { n = n + 1; n }; };
+let contar = crear();
+contar();
+print(contar());

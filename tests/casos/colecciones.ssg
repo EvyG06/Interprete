@@ -1,0 +1,8 @@
+let a = [1, 2, 3];
+a[0] = 10;
+push(a, 4);
+print(a, len(a), a[7]);
+let h = {"x": 1, 2: "dos", true: [1]};
+h["y"] = h["x"] + 1;
+print(h, h[2], h["z"]);
+print([1] + [2] == [1, 2]);

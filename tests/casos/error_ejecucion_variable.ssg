@@ -1,0 +1,4 @@
+let f = function() {
+    return y + 1;
+};
+f();

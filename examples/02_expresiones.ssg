@@ -1,0 +1,20 @@
+// Precedencia y asociatividad
+print("1 + 2 * 3 =", 1 + 2 * 3);
+print("(1 + 2) * 3 =", (1 + 2) * 3);
+print("10 - 3 - 2 =", 10 - 3 - 2);
+print("2 ** 3 ** 2 =", 2 ** 3 ** 2);
+print("-2 ** 2 =", -2 ** 2);
+
+// División entera que trunca hacia cero y módulo
+print("-7 / 2 =", -7 / 2, "y -7 % 2 =", -7 % 2);
+
+// Relacionales y lógicos
+print("3 < 5 && 5 <= 5 =", 3 < 5 && 5 <= 5);
+print("!(1 == 2) || false =", !(1 == 2) || false);
+
+// Cortocircuito: el lado derecho no se evalúa
+print("false && variable_inexistente =", false && variable_inexistente);
+
+// Cadenas y listas con +
+print("hola" + " " + "mundo");
+print([1, 2] + [3]);

@@ -1,0 +1,2 @@
+let suma = function(a, b) { a + b };
+suma(1);

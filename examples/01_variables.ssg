@@ -1,0 +1,13 @@
+// Declaración con let, consulta y reasignación con =
+let nombre = "Sebas";
+let edad = 38;
+print("nombre:", nombre, "edad:", edad);
+
+edad = edad + 1;
+print("después de reasignar:", edad);
+
+// a = b = valor asocia por la derecha
+let a = 0;
+let b = 0;
+a = b = 7;
+print("a y b:", a, b);

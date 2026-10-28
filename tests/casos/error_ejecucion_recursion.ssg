@@ -1,0 +1,3 @@
+let infinita = function(n) { return infinita(n + 1); };
+print("empieza");
+infinita(0);

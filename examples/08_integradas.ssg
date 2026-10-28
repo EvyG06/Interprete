@@ -1,0 +1,9 @@
+print("len:", len("compiladores"), len([1, 2, 3]), len({"a": 1}));
+print("str:", str(42) + "!");
+print("int:", int("17") + int(true));
+print("type:", type(1), type("a"), type([]), type({}), type(print));
+
+let pila = [];
+push(pila, "a");
+push(pila, "b");
+print("push:", pila);

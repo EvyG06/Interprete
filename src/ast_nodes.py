@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, fields
 
 from .tokens import Token
 
@@ -198,3 +198,48 @@ class IndexExpression(Expression):
 
     def __str__(self) -> str:
         return f"({self.left}[{self.index}])"
+
+
+def format_scalar(value) -> str:
+    if isinstance(value, bool):
+        return "true" if value else "false"
+    return repr(value) if isinstance(value, str) else str(value)
+
+
+def node_label(node: Node) -> str:
+    scalars = [
+        format_scalar(getattr(node, f.name))
+        for f in fields(node)
+        if f.name != "token" and isinstance(getattr(node, f.name), (str, int))
+    ]
+    return " ".join([type(node).__name__, *scalars])
+
+
+def node_children(node: Node) -> list[tuple[str, Node]]:
+    children = []
+    for f in fields(node):
+        value = getattr(node, f.name)
+        if isinstance(value, Node):
+            children.append((f.name, value))
+        elif isinstance(value, list):
+            for i, item in enumerate(value):
+                if isinstance(item, tuple):
+                    children.append((f"{f.name}[{i}].clave", item[0]))
+                    children.append((f"{f.name}[{i}].valor", item[1]))
+                else:
+                    children.append((f"{f.name}[{i}]", item))
+    return children
+
+
+def format_tree(node: Node) -> str:
+    lines = [node_label(node)]
+    add_children(node, "", lines)
+    return "\n".join(lines)
+
+
+def add_children(node: Node, prefix: str, lines: list[str]) -> None:
+    children = node_children(node)
+    for i, (label, child) in enumerate(children):
+        last = i == len(children) - 1
+        lines.append(f"{prefix}{'`-- ' if last else '|-- '}{label}: {node_label(child)}")
+        add_children(child, prefix + ("    " if last else "|   "), lines)

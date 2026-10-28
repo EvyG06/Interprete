@@ -1,0 +1,15 @@
+// Listas
+let lista = [10, 20, 30];
+lista[1] = 25;
+print("lista:", lista, "primero:", lista[0], "fuera de rango:", lista[9]);
+
+// Matriz: listas anidadas
+let matriz = [[1, 2], [3, 4]];
+matriz[1][0] = 9;
+print("matriz:", matriz);
+
+// Diccionarios con claves enteras, booleanas o cadenas
+let persona = {"nombre": "Ada", "edad": 36, true: "activa"};
+persona["ciudad"] = "Londres";
+print("persona:", persona);
+print("nombre:", persona["nombre"], "falta:", persona["telefono"]);

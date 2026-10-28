@@ -1,0 +1,4 @@
+print(false && no_existe);
+print(true || no_existe);
+print(1 && "texto");
+print(!0);

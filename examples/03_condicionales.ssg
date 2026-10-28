@@ -1,0 +1,22 @@
+let clasificar = function(n) {
+    if (n < 0) {
+        return "negativo";
+    } elif (n == 0) {
+        return "cero";
+    } else {
+        if (n % 2 == 0) {
+            return "positivo par";
+        } else {
+            return "positivo impar";
+        }
+    }
+};
+
+print(clasificar(-4), clasificar(0), clasificar(6), clasificar(7));
+
+// if también es una expresión que produce un valor
+let mensaje = if (10 > 3) { "mayor" } else { "menor" };
+print("mensaje:", mensaje);
+
+// Solo false y null son falsos: 0 es verdadero
+print("if (0):", if (0) { "verdadero" } else { "falso" });
